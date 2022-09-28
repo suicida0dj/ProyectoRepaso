@@ -20,22 +20,28 @@ public class Input {
         }
         return sc.nextInt();
     }
-
-    public static int getConfirmacion(String message){
-
-        System.out.print("\\033[H\\033[2J");
-        System.out.print("has seleccionado: "+ message + ". Presiona 1 para continuar, 2 para volver.");
+    public static int getInteger(){
         Scanner sc = new Scanner(System.in);
         while (!sc.hasNextInt()) {
             System.out.println("Error. Tienes que introducir un numero entero.");
             sc.next();
         }
-
-        while(sc.nextInt()!=1 || sc.nextInt()!=2) {
-            System.out.println("Error. Tienes que introducir un numero entre 1 y 2.");
-            sc.next();
-        }
         return sc.nextInt();
+    }
+
+
+    public static int getConfirmacion(String message){
+
+    //    System.out.print("\033[H\033[2J");
+
+        System.out.print("has seleccionado: "+ message + ". Presiona 1 para continuar, 2 para volver.");
+        Scanner sc = new Scanner(System.in);
+        int num = getInteger();
+        while(num!=1 && num!=2) {
+            System.out.println("Error. Tienes que introducir un numero entre 1 y 2.");
+            num = sc.nextInt();
+        }
+        return num;
     }
 
 }

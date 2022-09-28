@@ -4,8 +4,8 @@ public class Menu {
 
          int numMenu, numConfirmacion;
 
-         System.out.print("\\033[H\\033[2J");
-         Screen.showText("Bienvenido al programa de repaso para Java");
+     //    System.out.print("\\033[H\\033[2J");
+         Screen.wellcomeMessage();
 
          do {
              numMenu = Input.getInteger("""
@@ -34,7 +34,7 @@ public class Menu {
      public static void menuTiposBasicos(){
          int numMenu;
 
-         System.out.print("\\033[H\\033[2J");
-         Screen.showText("Bienvenido al programa de repaso para Java");
+     //    System.out.print("\\033[H\\033[2J");
+         Screen.showText("");
      }
 }
