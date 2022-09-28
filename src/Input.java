@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Inputs {
+public class Input {
     public static String getString(String message){
         Scanner sc = new Scanner(System.in);
         System.out.println(message);
@@ -15,18 +15,27 @@ public class Inputs {
         Scanner sc = new Scanner(System.in);
         System.out.println(message);
         while (!sc.hasNextInt()) {
-            System.out.println("Error. You have to enter a integer number.");
+            System.out.println("Error. Tienes que introducir un numero entero.");
             sc.next();
         }
         return sc.nextInt();
     }
-    public static float getFloat(String message){
+
+    public static int getConfirmacion(String message){
+
+        System.out.print("\\033[H\\033[2J");
+        System.out.print("has seleccionado: "+ message + ". Presiona 1 para continuar, 2 para volver.");
         Scanner sc = new Scanner(System.in);
-        System.out.println(message);
-        while (!sc.hasNextFloat()) {
-            System.out.println("Error. You have to enter a float number.");
+        while (!sc.hasNextInt()) {
+            System.out.println("Error. Tienes que introducir un numero entero.");
             sc.next();
         }
-        return sc.nextFloat();
+
+        while(sc.nextInt()!=1 || sc.nextInt()!=2) {
+            System.out.println("Error. Tienes que introducir un numero entre 1 y 2.");
+            sc.next();
+        }
+        return sc.nextInt();
     }
+
 }
